@@ -1,0 +1,15 @@
+fastapi
+uvicorn
+sqlalchemy
+passlib[bcrypt]
+python-multipart
+python-jose[cryptography]
+slowapi
+pydantic
+pydantic-settings
+gunicorn
+jinja2
+aiofiles
+a2wsgi
+python-dotenv
+mangum

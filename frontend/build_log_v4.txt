@@ -1,0 +1,47 @@
+
+> frontend@0.0.0 build
+> vite build
+
+[36mvite v8.0.3 [32mbuilding client environment for production...[36m[39m
+[2K
+transforming...Ô£ô 2199 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                             1.22 kB Ôöé gzip:  0.57 kB
+dist/assets/logo-D_VBIBOi.png             123.06 kB
+dist/assets/rata-kWjuLjoA.png             523.15 kB
+dist/assets/wanted-CkEeyJ5Y.png           718.02 kB
+dist/assets/ringtail-C-LGCYlY.png         805.05 kB
+dist/assets/raccoon-CLeNpA39.png          884.92 kB
+dist/assets/api-1oWo33m3.css                0.91 kB Ôöé gzip:  0.41 kB
+dist/assets/index-CrFMo7Zt.css             76.05 kB Ôöé gzip: 12.00 kB
+dist/assets/rata-BO3fGmfu.js                0.04 kB Ôöé gzip:  0.06 kB
+dist/assets/ringtail-3SZSZpWD.js            0.08 kB Ôöé gzip:  0.09 kB
+dist/assets/loader-circle-BxJKrXLp.js       0.14 kB Ôöé gzip:  0.15 kB
+dist/assets/plus-S80bWa4p.js                0.15 kB Ôöé gzip:  0.15 kB
+dist/assets/clock-DQ5THa-l.js               0.16 kB Ôöé gzip:  0.16 kB
+dist/assets/search-C4bieQ42.js              0.17 kB Ôöé gzip:  0.16 kB
+dist/assets/circle-check-big-CHrFGDg4.js    0.19 kB Ôöé gzip:  0.18 kB
+dist/assets/user-Me-zxqy5.js                0.19 kB Ôöé gzip:  0.18 kB
+dist/assets/history-B8pDUtDZ.js             0.23 kB Ôöé gzip:  0.19 kB
+dist/assets/minus-D4IJCuXB.js               0.24 kB Ôöé gzip:  0.19 kB
+dist/assets/shield-check-B4s51Da0.js        0.32 kB Ôöé gzip:  0.24 kB
+dist/assets/tag-B_zIukBx.js                 0.32 kB Ôöé gzip:  0.24 kB
+dist/assets/trash-2-BA4-gfG3.js             0.32 kB Ôöé gzip:  0.21 kB
+dist/assets/package-CKRL1eDr.js             0.37 kB Ôöé gzip:  0.25 kB
+dist/assets/AnimatePresence-Bu0A1W8s.js     3.94 kB Ôöé gzip:  1.82 kB
+dist/assets/History-BnlGhfsg.js             5.75 kB Ôöé gzip:  2.02 kB
+dist/assets/Customers-Cn6Fyg7Q.js           7.27 kB Ôöé gzip:  2.30 kB
+dist/assets/Expenses-B3FJ_bt3.js            7.69 kB Ôöé gzip:  2.28 kB
+dist/assets/AnimatedNumber-D0M0oKIF.js      8.22 kB Ôöé gzip:  3.71 kB
+dist/assets/Login-ovLxaSZw.js               8.69 kB Ôöé gzip:  3.02 kB
+dist/assets/Amortizations-D4cLNnvI.js      13.62 kB Ôöé gzip:  3.99 kB
+dist/assets/Settings-DfFpTbsP.js           15.13 kB Ôöé gzip:  4.09 kB
+dist/assets/POS-BtLEzM4w.js                15.56 kB Ôöé gzip:  4.55 kB
+dist/assets/Inventory-xMhEvNZ-.js          40.86 kB Ôöé gzip:  8.21 kB
+dist/assets/api-C-SItodV.js                44.88 kB Ôöé gzip: 17.49 kB
+dist/assets/createLucideIcon-p8DmmDvv.js  130.74 kB Ôöé gzip: 42.92 kB
+dist/assets/Dashboard-C0nNClL6.js         182.62 kB Ôöé gzip: 61.09 kB
+dist/assets/index-C0MCD5HN.js             202.90 kB Ôöé gzip: 64.07 kB
+
+[32mÔ£ô built in 3.29s[39m

@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configuración de Requerimientos - Greenlife Enterprise</title>
+    <style>
+        :root {
+            --brand: #00D084;
+            --brand-glow: rgba(0, 208, 132, 0.4);
+            --bg: #0A1A0F;
+            --card: rgba(255, 255, 255, 0.02);
+            --card-hover: rgba(255, 255, 255, 0.04);
+            --text: #ffffff;
+            --text-muted: rgba(255, 255, 255, 0.5);
+            --border: rgba(255, 255, 255, 0.08);
+            --input-bg: rgba(0, 0, 0, 0.3);
+        }
+        
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            background-color: var(--bg);
+            background-image: 
+                radial-gradient(circle at 15% 50%, rgba(0, 208, 132, 0.05), transparent 25%),
+                radial-gradient(circle at 85% 30%, rgba(0, 208, 132, 0.05), transparent 25%);
+            color: var(--text);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background: linear-gradient(180deg, rgba(0, 208, 132, 0.08) 0%, transparent 100%);
+            padding: 80px 20px 60px;
+            text-align: center;
+            border-bottom: 1px solid var(--border);
+        }
+
+        h1 {
+            color: var(--brand);
+            font-size: 3rem;
+            margin-top: 0;
+            margin-bottom: 15px;
+            letter-spacing: -1.5px;
+            font-weight: 900;
+        }
+
+        .container {
+            max-width: 850px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+            margin-bottom: 40px;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .section-title span {
+            color: var(--brand);
+        }
+
+        .section-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            padding: 40px;
+            margin-bottom: 40px;
+            backdrop-filter: blur(20px);
+            transition: all 0.3s ease;
+        }
+
+        .section-card:hover {
+            background: var(--card-hover);
+            border-color: rgba(255, 255, 255, 0.15);
+        }
+
+        .section-card h2 {
+            color: var(--brand);
+            margin-top: 0;
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .description {
+            color: var(--text-muted);
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 600;
+            color: #fff;
+            font-size: 0.95rem;
+        }
+
+        input[type="text"],
+        textarea {
+            width: 100%;
+            background: var(--input-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 16px;
+            color: var(--text);
+            font-family: inherit;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            resize: vertical;
+        }
+
+        input[type="text"]:focus,
+        textarea:focus {
+            outline: none;
+            border-color: var(--brand);
+            box-shadow: 0 0 0 4px rgba(0, 208, 132, 0.1);
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        textarea {
+            min-height: 100px;
+        }
+
+        .badge {
+            background: rgba(0, 208, 132, 0.1);
+            color: var(--brand);
+            border: 1px solid var(--brand-glow);
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        .action-bar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(10, 26, 15, 0.9);
+            backdrop-filter: blur(10px);
+            border-top: 1px solid var(--border);
+            padding: 20px;
+            text-align: center;
+            z-index: 100;
+        }
+
+        .btn {
+            background: var(--brand);
+            color: #000;
+            border: none;
+            padding: 16px 40px;
+            border-radius: 14px;
+            font-size: 1.1rem;
+            font-weight: 900;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            box-shadow: 0 10px 30px rgba(0, 208, 132, 0.2);
+            font-family: inherit;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 40px rgba(0, 208, 132, 0.4);
+            background: #00E691;
+        }
+        
+        .spacer {
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Greenlife Landscaping</h1>
+        <p style="color: var(--text-muted); font-size: 1.2rem; max-width: 600px; margin: 0 auto;">
+            Configuración del Sistema CRM. Por favor completa los siguientes campos para personalizar la aplicación a la medida de tu operación.
+        </p>
+    </header>
+
+    <div class="container">
+        
+        <form id="requirementsForm">
+
+            <!-- SECCIÓN 1: PESTAÑAS Y REQUERIMIENTOS -->
+            <h2 class="section-title"><span>01.</span> Ajustes de la Aplicación</h2>
+
+            <div class="section-card">
+                <h2>📊 Dashboard (Panel Principal)</h2>
+                <p class="description">Aquí verán el resumen de la salud de su negocio: dinero ingresado, proyectos activos y tareas pendientes.</p>
+                
+                <div class="form-group">
+                    <label>¿Cuáles son los 3 datos numéricos que más te importaría ver al abrir la app cada mañana?</label>
+                    <textarea name="dashboard_metrics" placeholder="Ej. Dinero ganado esta semana, Proyectos activos, Gastos del mes..."></textarea>
+                </div>
+                <div class="form-group">
+                    <label>¿Deseas tener metas mensuales establecidas en el sistema? (Si sí, descríbelas)</label>
+                    <input type="text" name="dashboard_goals" placeholder="Ej. Sí, llegar a $50,000 usd al mes.">
+                </div>
+            </div>
+
+            <div class="section-card">
+                <h2>📄 Cotizaciones (Quotes)</h2>
+                <p class="description">El módulo donde se crean los presupuestos para los clientes. Al aprobarse, se convierten en Proyectos activos.</p>
+                
+                <div class="form-group">
+                    <label>Términos y condiciones o políticas que deben ir siempre al final de sus PDFs de cotización:</label>
+                    <textarea name="quotes_terms" placeholder="Ej. Esta cotización tiene una validez de 15 días. Se requiere el 50% de anticipo..."></textarea>
+                </div>
+                <div class="form-group">
+                    <label>Manejo de Impuestos:</label>
+                    <input type="text" name="quotes_taxes" placeholder="Ej. Se cobra un 7% de Tax adicional al precio mostrado.">
+                </div>
+            </div>
+
+            <div class="section-card">
+                <h2>👥 Personal (Staff)</h2>
+                <p class="description">Gestión de los equipos de trabajo que ejecutan los proyectos de landscaping.</p>
+                
+                <div class="form-group">
+                    <label>¿Cuántos empleados operativos en campo tienen actualmente?</label>
+                    <input type="text" name="staff_count" placeholder="Ej. 3 cuadrillas de 4 personas cada una (12 total).">
+                </div>
+                <div class="form-group">
+                    <label>¿Necesitan que la aplicación registre horas de entrada/salida (reloj checador), o solo asignar personal a proyectos?</label>
+                    <textarea name="staff_tracking" placeholder="Solo asignar cuadrillas, o Sí, necesitamos que marquen su hora de llegada..."></textarea>
+                </div>
+            </div>
+
+            <div class="section-card">
+                <h2>💸 Finanzas (Gastos y Cobros)</h2>
+                <p class="description">Donde registran lo que el cliente paga y lo que ustedes gastan en la operación diaria.</p>
+                
+                <div class="form-group">
+                    <label>Nombra tus 5 categorías principales de gastos:</label>
+                    <textarea name="finance_categories" placeholder="1. Gasolina&#10;2. Materiales de Vivero&#10;3. Reparación de Maquinaria..."></textarea>
+                </div>
+            </div>
+
+            <!-- SECCIÓN 2: CORREO CORPORATIVO -->
+            <h2 class="section-title"><span>02.</span> Identidad y Correo</h2>
+            <div className="section-card">
+                <span className="badge">Requerido para envíos</span>
+                <h2>📧 Correo Empresarial (@greenlifeenterprisellc.com)</h2>
+                <p class="description">Para proyectar una imagen 100% profesional, el sistema enviará todas las cotizaciones y facturas desde su dominio propio. Recomendamos **Google Workspace** por su fiabilidad.</p>
+                
+                <div style="background: rgba(0,208,132,0.05); padding: 25px; border-radius: 16px; margin-bottom: 25px; border: 1px solid rgba(0,208,132,0.1);">
+                    <h3 style="color: var(--brand); margin-top: 0; font-size: 1.1rem;">¿Cómo configurar su correo empresarial?</h3>
+                    <ol style="padding-left: 20px; font-size: 0.9rem; color: var(--text-muted);">
+                        <li style="margin-bottom: 10px;"><strong>Dominio:</strong> Asegúrese de que el dominio <code>greenlifeenterprisellc.com</code> esté registrado y activo.</li>
+                        <li style="margin-bottom: 10px;"><strong>Google Workspace:</strong> Cree una cuenta de administrador en Workspace para gestionar sus correos.</li>
+                        <li style="margin-bottom: 10px;"><strong>Registros MX:</strong> En su panel de DNS (GoDaddy, etc.), añada los registros MX proporcionados por Google. Esto "conecta" su dominio con el servicio de correo.</li>
+                        <li style="margin-bottom: 10px;"><strong>Contraseña de Aplicación:</strong> Para que este sistema CRM pueda enviar correos en su nombre, deberá generar una "Contraseña de Aplicación" en la seguridad de su cuenta Google.</li>
+                    </ol>
+                </div>
+
+                <div class="form-group">
+                    <label>¿Ya cuentan con acceso a su panel de administración de Google Workspace?</label>
+                    <input type="text" name="workspace_access" placeholder="Ej. Sí, yo tengo la clave maestra.">
+                </div>
+            </div>
+
+            <!-- SECCIÓN 3: BOT DE WHATSAPP -->
+            <h2 class="section-title"><span>03.</span> Innovación en Ventas</h2>
+            <div class="section-card">
+                <span class="badge">Automatización 24/7</span>
+                <h2>🤖 Bot de WhatsApp Integrado</h2>
+                <p class="description">Podemos conectar un Asistente Virtual a su WhatsApp. Cuando un cliente escriba, el bot le preguntará su nombre y qué servicio requiere, y enviará esa info directamente a la app como "Cotización Pendiente".</p>
+                
+                <div class="form-group">
+                    <label>¿Están interesados en esta función para captar clientes en automático?</label>
+                    <input type="text" name="bot_interest" placeholder="Sí, me interesa / No por el momento">
+                </div>
+                <div class="form-group">
+                    <label>¿Cuáles son las 3 preguntas o dudas más frecuentes que les hacen los clientes nuevos por WhatsApp?</label>
+                    <textarea name="bot_questions" placeholder="1. ¿Hacen estimaciones gratis?&#10;2. ¿Cuánto tardan en agendar?&#10;3..."></textarea>
+                </div>
+            </div>
+
+        </form>
+    </div>
+
+    <div class="spacer"></div>
+
+    <div class="action-bar">
+        <button class="btn" onclick="descargarRespuestas()">Guardar y Descargar Respuestas</button>
+    </div>
+
+    <script>
+        function descargarRespuestas() {
+            const form = document.getElementById('requirementsForm');
+            const formData = new FormData(form);
+            
+            let texto = "=========================================\n";
+            texto += "RESPUESTAS DE CONFIGURACIÓN - GREENLIFE\n";
+            texto += "=========================================\n\n";
+
+            const etiquetas = {
+                'dashboard_metrics': '1. Métricas del Dashboard:',
+                'dashboard_goals': '2. Metas Mensuales:',
+                'quotes_terms': '3. Términos de Cotizaciones:',
+                'quotes_taxes': '4. Manejo de Impuestos:',
+                'staff_count': '5. Cantidad de Personal:',
+                'staff_tracking': '6. Control de Horas/Cuadrillas:',
+                'finance_categories': '7. Categorías de Gastos:',
+                'domain_status': '8. Estado del Dominio Web:',
+                'email_count': '9. Cantidad de Correos:',
+                'bot_interest': '10. Interés en Bot de WhatsApp:',
+                'bot_questions': '11. Preguntas Frecuentes de Clientes:'
+            };
+
+            for (let [key, value] of formData.entries()) {
+                texto += `${etiquetas[key] || key}\n`;
+                texto += `${value || '(Sin respuesta)'}\n\n`;
+            }
+
+            // Crear archivo y descargar
+            const blob = new Blob([texto], { type: "text/plain;charset=utf-8" });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement("a");
+            a.href = url;
+            a.download = "Requerimientos_Greenlife.txt";
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+
+            alert("¡Respuestas descargadas con éxito! Por favor envía el archivo generado al equipo de desarrollo.");
+        }
+    </script>
+</body>
+</html>

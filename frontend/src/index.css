@@ -1,0 +1,304 @@
+/* ========================================
+   SMOKE RINGS OFFICIAL - SISTEMA DE DISEÑO PREMIUM
+   Última restauración: Abril 2026
+   ======================================== */
+
+/* === IMPORTACIONES CRÍTICAS === */
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&family=Fredoka:wght@300;400;500;600;700&family=Comfortaa:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply antialiased;
+    color: var(--text-primary);
+    background-color: var(--bg-main);
+    background-image: 
+      radial-gradient(circle at top right, rgba(16, 185, 129, 0.08), transparent 40%),
+      linear-gradient(rgba(5, 10, 7, 0.75), rgba(5, 10, 7, 0.9)),
+      url('./assets/luxe-nature-bg.png') !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-attachment: fixed !important;
+    font-family: 'Montserrat', sans-serif; /* Montserrat is more professional */
+  }
+  
+  * {
+    @apply border-white/5;
+  }
+}
+
+/* ========================================
+   TEMAS PREMIUM - VARIABLES CSS NATIVAS
+   (Las variables reales se inyectan via App.jsx y themeConfig.js)
+   ======================================== */
+:root {
+  /* Greenlife Premium Signature */
+  --brand: #10B981;
+  --brand-rgb: 16, 185, 129;
+  --brand-glow: rgba(16, 185, 129, 0.25);
+  --bg-main: #050A07;
+  --bg-card: rgba(12, 25, 18, 0.6);
+  --text-main: #F0FAF5;
+  --text-muted: #8CA397;
+  --border-glass: rgba(16, 185, 129, 0.15);
+  
+  --success: #10B981;
+  --warning: #F59E0B;
+  --danger: #EF4444;
+  --info: #3B82F6;
+
+  --glass: rgba(5, 12, 8, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.08);
+}
+
+/* ========================================
+   UTILITIES DE TAILWIND EXTENDIDAS
+   ======================================== */
+
+@layer components {
+  /* Botones Premium */
+  .btn-primary {
+    @apply bg-[var(--brand)] text-white font-semibold px-6 py-3 rounded-lg
+           hover:bg-[var(--brand-dark)] active:scale-95
+           transition-all duration-200 ease-out
+           shadow-lg shadow-[var(--brand-glow)];
+  }
+
+  .btn-secondary {
+    @apply bg-[var(--surface-elevated)] text-[var(--text-primary)] font-medium px-6 py-3 rounded-lg
+           hover:bg-[var(--surface-hover)] active:scale-95
+           transition-all duration-200 ease-out
+           border border-[var(--surface-border)];
+  }
+
+  .btn-ghost {
+    @apply text-[var(--text-secondary)] font-medium px-4 py-2 rounded-lg
+           hover:bg-[var(--surface-hover)] hover:text-[var(--text-primary)]
+           transition-all duration-200 ease-out;
+  }
+
+  /* Cards Premium */
+  .card {
+    @apply bg-[var(--surface-elevated)] rounded-xl p-6
+           border border-[var(--surface-border)]
+           shadow-xl;
+  }
+
+  .card-hover {
+    @apply card hover:border-[var(--brand)] hover:shadow-2xl hover:shadow-[var(--brand-glow)]
+           transition-all duration-300 ease-out cursor-pointer;
+  }
+
+  /* Inputs Premium */
+  .input {
+    @apply bg-[var(--surface)] text-[var(--text-primary)] px-4 py-3 rounded-lg
+           border border-[var(--surface-border)]
+           focus:border-[var(--brand)] focus:ring-2 focus:ring-[var(--brand-glow)]
+           transition-all duration-200 ease-out
+           placeholder:text-[var(--text-muted)];
+  }
+
+  /* Glass Effect Premium */
+  .glass {
+    @apply bg-[var(--glass)] backdrop-blur-2xl
+           border border-[var(--glass-border)]
+           shadow-[0_8px_32px_0_rgba(0,0,0,0.4)];
+  }
+
+  /* Glows y Efectos */
+  .glow-brand {
+    box-shadow: 0 0 20px var(--brand-glow);
+  }
+
+  .glow-brand-lg {
+    box-shadow: 0 0 40px var(--brand-glow), 0 0 80px var(--brand-glow);
+  }
+}
+
+/* ========================================
+   ANIMACIONES DE ALTA PERFORMANCE
+   ======================================== */
+
+@layer utilities {
+  /* Transiciones Suaves */
+  .transition-smooth {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .transition-fast {
+    transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .transition-spring {
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  /* Hover States Optimizados */
+  .hover-lift {
+    @apply transition-transform duration-300 ease-out hover:-translate-y-1;
+  }
+
+  .hover-scale {
+    @apply transition-transform duration-300 ease-out hover:scale-105;
+  }
+
+  .hover-glow {
+    @apply transition-shadow duration-300 ease-out hover:shadow-[0_0_20px_var(--brand-glow)];
+  }
+
+  /* Active States */
+  .active-press {
+    @apply active:scale-95 transition-transform duration-100;
+  }
+}
+
+/* ========================================
+   SCROLLBARS PERSONALIZADOS
+   ======================================== */
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--surface);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--surface-border);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--brand);
+}
+
+/* ========================================
+   OVERRIDES Y FIXES CRÍTICOS
+   ======================================== */
+
+/* Fix de contraste en textos */
+.text-primary {
+  color: var(--text-primary) !important;
+}
+
+.text-secondary {
+  color: var(--text-secondary) !important;
+}
+
+.text-muted {
+  color: var(--text-muted) !important;
+}
+
+/* Fix de backgrounds */
+.bg-surface {
+  background-color: var(--surface) !important;
+}
+
+.bg-elevated {
+  background-color: var(--surface-elevated) !important;
+}
+
+/* Fix de borders */
+.border-subtle {
+  border-color: var(--surface-border) !important;
+}
+
+/* Animaciones sin lag - GPU Acceleration */
+.gpu-accelerated {
+  transform: translateZ(0);
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+}
+
+/* ========================================
+   RESPONSIVE OPTIMIZATIONS
+   ======================================== */
+
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+
+  .card {
+    @apply p-4;
+  }
+
+  h1 {
+    @apply text-2xl;
+  }
+
+  h2 {
+    @apply text-xl;
+  }
+}
+
+/* ========================================
+   PRINT OPTIMIZATIONS
+   ======================================== */
+
+@media print {
+  body {
+    background: white !important;
+    color: black !important;
+    font-size: 12pt;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  .glass {
+    background: white !important;
+    border: 1px solid #eee !important;
+    box-shadow: none !important;
+    backdrop-filter: none !important;
+  }
+
+  h1, h2, h3 {
+    color: black !important;
+    page-break-after: avoid;
+  }
+
+  .card, .glass {
+    page-break-inside: avoid;
+    margin-bottom: 20pt;
+  }
+
+  /* Asegurar que las gráficas sean visibles si es posible */
+  .recharts-responsive-container {
+    page-break-inside: avoid;
+  }
+}
+/* ========================================
+   RECURSOS DE ANIMACIÓN PREMIUM: HUMO / SMOKE
+   ======================================== */
+.smoke-container {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.6;
+}
+
+.smoke-particle {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(0, 208, 132, 0.15) 0%, rgba(0, 208, 132, 0.05) 40%, transparent 70%);
+  border-radius: 50%;
+  filter: blur(60px);
+  will-change: transform, opacity;
+  animation: drift var(--duration, 20s) infinite alternate ease-in-out;
+}
+
+@keyframes drift {
+  0% { transform: translate3d(-10%, -10%, 0) scale(1) rotate(0deg); opacity: 0.3; }
+  50% { transform: translate3d(10%, 5%, 0) scale(1.1) rotate(90deg); opacity: 0.5; }
+  100% { transform: translate3d(-5%, 15%, 0) scale(0.9) rotate(180deg); opacity: 0.2; }
+}
