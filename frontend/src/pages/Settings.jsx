@@ -6,8 +6,9 @@ import { useConfirmStore } from '../store/useConfirmStore';
 import { THEME_CONFIG, FONT_CONFIG } from '../themeConfig';
 import {
   User, Shield, Palette, Camera,
-  Loader2, CheckCircle2, LogOut, RotateCcw, Check, AlertTriangle, Trash2, Database, Download, Users, Plus, UserPlus, X
+  Loader2, CheckCircle2, LogOut, RotateCcw, Check, AlertTriangle, Trash2, Database, Download, Users, Plus, UserPlus, X, Briefcase
 } from 'lucide-react';
+import Services from './Services';
 
 import { useNotificationStore } from '../store/useNotificationStore';
 import apiClient from '../api/client';
@@ -137,6 +138,7 @@ const Settings = () => {
     { id: 'profile', label: t('settings.profile'), icon: User },
     { id: 'appearance', label: t('settings.appearance'), icon: Palette },
     { id: 'security', label: t('settings.security'), icon: Shield },
+    { id: 'services', label: 'Servicios', icon: Briefcase },
   ];
 
   const handleClearData = (endpoint, type) => {
@@ -543,6 +545,11 @@ const Settings = () => {
             </motion.div>
           )}
 
+          {activeTab === 'services' && (
+            <motion.div key="services" initial={{ opacity: 0, y: 6 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0 }}>
+                <Services />
+            </motion.div>
+          )}
         </AnimatePresence>
       </div>
     </div>

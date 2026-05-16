@@ -46,7 +46,7 @@ export function useExchangeRate() {
     setLoading(true);
     setError(null);
     try {
-      const res = await fetch('https://api.frankfurter.app/latest?from=USD&to=MXN', {
+      const res = await fetch('https://open.er-api.com/v6/latest/USD', {
         signal: AbortSignal.timeout(8000),
       });
       if (!res.ok) throw new Error(`HTTP ${res.status}`);

@@ -13,26 +13,19 @@ import { useTranslation } from 'react-i18next';
 import logoSrc from '../assets/logo.jpeg';
 
 const navItems = [
-  { path: '/dashboard', labelKey: 'sidebar.dashboard',    icon: LayoutDashboard },
-  { path: '/leads',     labelKey: 'sidebar.leads',        icon: Bell },
-  { path: '/projects',  labelKey: 'sidebar.projects_new', icon: Briefcase },
-  { path: '/quotes',    labelKey: 'sidebar.quotes',       icon: FileText },
-  { path: '/clients',   labelKey: 'sidebar.clients',      icon: Users },
-  { path: '/services',  labelKey: 'sidebar.services',     icon: Tag },
-  { path: '/payments',  labelKey: 'sidebar.payments',     icon: CreditCard },
-  { path: '/expenses',  labelKey: 'sidebar.expenses',     icon: TrendingDown },
-  { path: '/history',   labelKey: 'sidebar.history',      icon: ClipboardList },
-  { path: '/map',       labelKey: 'sidebar.map',          icon: Map },
-  { path: '/settings',  labelKey: 'sidebar.settings',     icon: Sliders },
+  { path: '/dashboard',  labelKey: 'sidebar.dashboard',   icon: LayoutDashboard },
+  { path: '/crm',        labelKey: 'sidebar.crm',         icon: Users },
+  { path: '/operations', labelKey: 'sidebar.operations',  icon: Briefcase },
+  { path: '/finances',   labelKey: 'sidebar.finances',    icon: CreditCard },
+  { path: '/settings',   labelKey: 'sidebar.settings_short', icon: Sliders },
 ];
 
 const mobileNavItems = [
-  { path: '/dashboard',  labelKey: 'sidebar.home',            icon: LayoutDashboard },
-  { path: '/projects',   labelKey: 'sidebar.projects_mobile', icon: Briefcase },
-  { path: '/clients',    labelKey: 'sidebar.clients',         icon: Users },
-  { path: '/map',        labelKey: 'sidebar.map',             icon: Map },
-  { path: '/payments',   labelKey: 'sidebar.payments',        icon: CreditCard },
-  { path: '/settings',   labelKey: 'sidebar.settings',        icon: Sliders },
+  { path: '/dashboard',  labelKey: 'sidebar.home',           icon: LayoutDashboard },
+  { path: '/crm',        labelKey: 'sidebar.crm',            icon: Users },
+  { path: '/operations', labelKey: 'sidebar.operations',     icon: Briefcase },
+  { path: '/finances',   labelKey: 'sidebar.finances',       icon: CreditCard },
+  { path: '/settings',   labelKey: 'sidebar.settings_short', icon: Sliders },
 ];
 
 export default function Sidebar({ onLogout }) {

@@ -37,7 +37,11 @@
     "expenses_subtitle": "OPERATING EXPENSES",
     "history_subtitle": "PROJECT RECORDS",
     "map": "Map",
-    "map_subtitle": "CLIENT LOCATIONS"
+    "map_subtitle": "CLIENT LOCATIONS",
+    "crm": "CRM",
+    "operations": "Operations",
+    "finances": "Finances",
+    "settings_short": "Settings"
   },
 
   "dashboard": {

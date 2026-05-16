@@ -12,17 +12,10 @@ import { useTranslation } from 'react-i18next';
 // Páginas
 import Login from './pages/Login';
 import Dashboard from './pages/Dashboard';
-import Projects from './pages/Projects';
-import Quotes from './pages/Quotes';
-import Services from './pages/Services';
-import Clients from './pages/Clients';
-import Expenses from './pages/Expenses';
-import History from './pages/History';
-import Payments from './pages/Payments';
-import Suppliers from './pages/Suppliers';
 import Settings from './pages/Settings';
-import Map from './pages/Map';
-import LeadsDashboard from './pages/LeadsDashboard';
+import CRM from './pages/CRM';
+import Operations from './pages/Operations';
+import Finances from './pages/Finances';
 
 // Componentes
 import Sidebar from './components/Sidebar';
@@ -65,15 +58,9 @@ const getPageConfig = (path, t) => {
   const configs = {
     '/dashboard':     { title: t('sidebar.dashboard'),   subtitle: t('dashboard.subtitle') },
     '/':              { title: t('sidebar.dashboard'),   subtitle: t('dashboard.subtitle') },
-    '/projects':      { title: t('sidebar.projects_mobile'), subtitle: t('sidebar.projects_subtitle') },
-    '/leads':         { title: t('sidebar.leads'),          subtitle: t('sidebar.leads_subtitle') },
-    '/quotes':        { title: t('sidebar.quotes'),       subtitle: t('sidebar.quotes_subtitle') },
-    '/clients':       { title: t('sidebar.clients'),      subtitle: t('sidebar.clients_subtitle') },
-    '/services':      { title: t('sidebar.services'),     subtitle: t('sidebar.services_subtitle') },
-    '/payments':      { title: t('sidebar.payments'),     subtitle: t('sidebar.payments_subtitle') },
-    '/expenses':      { title: t('sidebar.expenses'),     subtitle: t('sidebar.expenses_subtitle') },
-    '/history':       { title: t('sidebar.history'),      subtitle: t('sidebar.history_subtitle') },
-    '/map':           { title: t('sidebar.map'),           subtitle: 'MAPA DE CLIENTES' },
+    '/crm':           { title: 'CRM',                     subtitle: 'PROSPECTOS, CLIENTES Y MAPA' },
+    '/operations':    { title: 'Operaciones',             subtitle: 'GESTIÓN, COTIZACIONES Y PROYECTOS' },
+    '/finances':      { title: 'Finanzas',                subtitle: 'INGRESOS Y EGRESOS' },
     '/settings':      { title: t('settings.title'),         subtitle: t('settings.subtitle') },
   };
   return configs[path] || { title: 'Greenlife', subtitle: 'CRM SYSTEM' };
@@ -137,15 +124,9 @@ function AppLayout() {
               <Routes location={location} key={location.pathname}>
                 <Route path="/" element={<PageWrapper><Dashboard /></PageWrapper>} />
                 <Route path="/dashboard" element={<PageWrapper><Dashboard /></PageWrapper>} />
-                <Route path="/leads" element={<PageWrapper><LeadsDashboard /></PageWrapper>} />
-                <Route path="/projects" element={<PageWrapper><Projects /></PageWrapper>} />
-                <Route path="/quotes" element={<PageWrapper><Quotes /></PageWrapper>} />
-                <Route path="/services" element={<PageWrapper><Services /></PageWrapper>} />
-                <Route path="/clients" element={<PageWrapper><Clients /></PageWrapper>} />
-                <Route path="/payments" element={<PageWrapper><Payments /></PageWrapper>} />
-                <Route path="/expenses" element={<PageWrapper><Expenses /></PageWrapper>} />
-                <Route path="/history" element={<PageWrapper><History /></PageWrapper>} />
-                <Route path="/map" element={<PageWrapper><Map /></PageWrapper>} />
+                <Route path="/crm" element={<PageWrapper><CRM /></PageWrapper>} />
+                <Route path="/operations" element={<PageWrapper><Operations /></PageWrapper>} />
+                <Route path="/finances" element={<PageWrapper><Finances /></PageWrapper>} />
                 <Route path="/settings" element={<PageWrapper><Settings /></PageWrapper>} />
                 <Route path="*" element={<Navigate to="/dashboard" replace />} />
               </Routes>

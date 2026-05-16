@@ -39,7 +39,11 @@
     "expenses_subtitle": "EGRESOS OPERATIVOS",
     "history_subtitle": "REGISTRO DE PROYECTOS",
     "map": "Mapa",
-    "map_subtitle": "LOCALIZACIÓN DE CLIENTES"
+    "map_subtitle": "LOCALIZACIÓN DE CLIENTES",
+    "crm": "CRM",
+    "operations": "Operaciones",
+    "finances": "Finanzas",
+    "settings_short": "Ajustes"
   },
 
   "dashboard": {

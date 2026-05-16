@@ -1,8 +1,20 @@
 import apiClient from './client';
 
 export const leadsApi = {
-  getLeads: () => apiClient.get('/leads/'),
-  updateLead: (id, data) => apiClient.patch(`/leads/${id}`, data),
-  convertLead: (id) => apiClient.post(`/leads/${id}/convert`),
-  publicQuoteRequest: (data) => apiClient.post('/leads/public/quote-request', data),
+  getLeads: async () => {
+    const response = await apiClient.get('/leads/');
+    return response.data;
+  },
+  updateLead: async (id, data) => {
+    const response = await apiClient.patch(`/leads/${id}`, data);
+    return response.data;
+  },
+  convertLead: async (id) => {
+    const response = await apiClient.post(`/leads/${id}/convert`);
+    return response.data;
+  },
+  publicQuoteRequest: async (data) => {
+    const response = await apiClient.post('/leads/public/quote-request', data);
+    return response.data;
+  },
 };

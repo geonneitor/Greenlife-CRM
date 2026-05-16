@@ -224,9 +224,9 @@ export default function Dashboard() {
         <MetricCard icon={DollarSign} label={t('dashboard.quoted_usd')} value={m.quoted_usd || 0} />
         <MetricCard icon={TrendingUp} label={t('dashboard.quoted_mxn')} value={m.quoted_mxn || 0} color="#D4A050" />
         <MetricCard icon={CreditCard} label={t('dashboard.paid_usd')} value={m.paid_usd || 0} color="#5098D4" />
-        <MetricCard icon={Briefcase} label={t('sidebar.active_projects')} value={m.active_projects || 0} prefix="" decimals={0} color="var(--brand)" onClick={() => window.location.href = '/projects'} />
-        <MetricCard icon={Users} label={t('dashboard.total_clients')} value={m.total_clients || 0} prefix="" decimals={0} color="#C9A84C" onClick={() => window.location.href = '/clients'} />
-        <MetricCard icon={PieChart} label={t('dashboard.expenses')} value={m.expenses || 0} color="#ff6b6b" onClick={() => window.location.href = '/expenses'} />
+        <MetricCard icon={Briefcase} label={t('dashboard.active_projects')} value={m.active_projects || 0} prefix="" decimals={0} color="var(--brand)" onClick={() => window.location.href = '/operations'} />
+        <MetricCard icon={Users} label={t('dashboard.total_clients')} value={m.total_clients || 0} prefix="" decimals={0} color="#C9A84C" onClick={() => window.location.href = '/crm'} />
+        <MetricCard icon={PieChart} label={t('dashboard.expenses')} value={m.expenses || 0} color="#ff6b6b" onClick={() => window.location.href = '/finances'} />
       </div>
 
       {/* ── Gráfica de Tendencia ── */}
