@@ -8,8 +8,12 @@ from slowapi import Limiter
 from slowapi.util import get_remote_address
 from slowapi.errors import RateLimitExceeded
 import os
+import sys
 import logging
 from dotenv import load_dotenv
+
+# Asegurar que Python pueda encontrar los módulos locales de 'backend'
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
 # Cargar variables de entorno
 load_dotenv()
