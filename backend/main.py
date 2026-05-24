@@ -47,6 +47,8 @@ def get_safe_remote_address(request: Request):
     except:
         return "127.0.0.1"
 
+from sqlalchemy.exc import IntegrityError
+
 limiter = Limiter(key_func=get_safe_remote_address)
 app = FastAPI(title="Greenlife Enterprise API")
 app.state.limiter = limiter
@@ -54,6 +56,14 @@ app.add_exception_handler(RateLimitExceeded, lambda request, exc: JSONResponse(
     status_code=429,
     content={"detail": "Demasiados intentos. Intenta más tarde."}
 ))
+
+@app.exception_handler(IntegrityError)
+async def integrity_error_handler(request: Request, exc: IntegrityError):
+    logger.error(f"Database Integrity constraint error: {str(exc)}")
+    return JSONResponse(
+        status_code=400,
+        content={"detail": "Error de integridad de datos. Restricción de base de datos violada."}
+    )
 
 # ✅ CORS: restringido en produccion
 ENVIRONMENT = os.getenv("ENVIRONMENT", "development")

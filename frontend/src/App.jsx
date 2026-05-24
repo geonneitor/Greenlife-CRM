@@ -11,11 +11,11 @@ import { useTranslation } from 'react-i18next';
 
 // Páginas
 import Login from './pages/Login';
-import Dashboard from './pages/Dashboard';
-import Settings from './pages/Settings';
-import CRM from './pages/CRM';
-import Operations from './pages/Operations';
-import Finances from './pages/Finances';
+const Dashboard = React.lazy(() => import('./pages/Dashboard'));
+const Settings = React.lazy(() => import('./pages/Settings'));
+const CRM = React.lazy(() => import('./pages/CRM'));
+const Operations = React.lazy(() => import('./pages/Operations'));
+const Finances = React.lazy(() => import('./pages/Finances'));
 
 // Componentes
 import Sidebar from './components/Sidebar';

@@ -115,6 +115,19 @@ class Payment(PaymentBase):
 # Projects
 # ─────────────────────────────────────────
 
+from enum import Enum
+
+class ProjectStatus(str, Enum):
+    ESTIMATE = "Estimate"
+    APPROVED = "Approved"
+    IN_PROGRESS = "In Progress"
+    COMPLETED = "Completed"
+    CANCELLED = "Cancelled"
+    MAINTENANCE = "Maintenance"
+
+class ProjectStatusUpdate(BaseModel):
+    status: ProjectStatus
+
 class ProjectItemBase(BaseModel):
     service_id: int
     quantity: float = 1.0

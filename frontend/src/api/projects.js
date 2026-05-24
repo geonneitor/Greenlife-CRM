@@ -22,8 +22,7 @@ export const projectsApi = {
   },
 
   updateProjectStatus: async (projectId, status) => {
-    // Note: the backend uses query parameters for status_update
-    const response = await client.put(`/projects/${projectId}?status_update=${status}`);
+    const response = await client.put(`/projects/${projectId}`, { status });
     return response.data;
   },
 
