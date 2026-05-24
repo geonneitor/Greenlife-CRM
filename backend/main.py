@@ -339,17 +339,9 @@ async def serve_spa(full_path: str):
     return JSONResponse(status_code=404, content={"error": "Frontend build not found"})
 
 @app.on_event("startup")
-def create_initial_admins():
-    db = next(database.get_db())
-    admins = ["Sergio", "Geonneitor"]
-    for admin_name in admins:
-        admin = db.query(models.User).filter(models.User.username == admin_name).first()
-        if not admin:
-            new_admin = models.User(
-                username=admin_name,
-                pin_hash=auth.get_password_hash("123456"),
-                role="admin"
-            )
-            db.add(new_admin)
-            print(f"Created initial admin user: {admin_name}")
-    db.commit()
+def startup_seeding():
+    from seed_db import seed_database
+    try:
+        seed_database()
+    except Exception as e:
+        logger.error(f"Error seeding database on startup: {e}")
